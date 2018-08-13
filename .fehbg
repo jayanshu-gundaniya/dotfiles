@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --bg-scale '/home/geralt/Pictures/Wallpaper/wallpaper.jpeg' 

@@ -1,0 +1,48 @@
+Urxvt.termname: rxvt-unicode-256color
+URxvt.font: xft:EnvyCodeR:bold:pixelsize=13
+URxvt.boldFont: xft:EnvyCodeR:bold:pixelsize=14
+URxvt.letterSpace: 0
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+!URxvt.scrollstyle: plain
+!URxvt*inheritPixmap: true
+!URxvt*transparent: true
+!URxvt*shading: 190
+URxvt.depth: 32
+
+URxvt.background: [92]#282828
+
+URxvt.foreground: #ffeec4
+
+! Black + DarkGrey
+URxvt.color0:  #303030
+URxvt.color8:  #706625
+
+! DarkRed + Red
+URxvt.color1:  #cc241d
+URxvt.color9:  #e50909
+
+! DarkGreen + Green
+URxvt.color2:  #1b6811
+URxvt.color10: #1daf0a
+
+! DarkYellow + Yellow
+URxvt.color3:  #d79921
+URxvt.color11: #f4f40e
+
+! DarkBlue + Blue
+URxvt.color4:  #458588
+URxvt.color12: #1bafe5
+
+! DarkMagenta + Magenta
+URxvt.color5:  #b16286
+URxvt.color13: #d3869b
+
+! DarkCyan + Cyan
+URxvt.color6:  #689d6a
+URxvt.color14: #8ec07c
+
+! LightGrey + White
+URxvt.color7:  #808080
+URxvt.color15: #ffeec4

@@ -1,0 +1,6 @@
+#!/bin/bash
+if pgrep -u geralt unclutter &> /dev/null ; then
+	killall -q unclutter
+else
+	unclutter -idle 0 &
+fi

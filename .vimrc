@@ -1,0 +1,2 @@
+colo slate 
+syntax on
