@@ -1,0 +1,7 @@
+update-cache
+set format_playlist= %-50t %a%=%d 
+set format_trackwin= %t %=%d 
+set format_current= %t %=[%l] %a 
+
+set color_titleline_bg= 4
+set color_titleline_fg= 15

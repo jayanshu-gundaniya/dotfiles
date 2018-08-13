@@ -1,0 +1,223 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = #ff000000
+foreground = #ffffffff
+foreground-focused = #ff000000
+foreground-unfocused = #ff777777
+primary = #99aabb
+indicator = #55aa55
+alert = #ff5555
+
+[bar/bottom]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 26
+radius = 0.0
+fixed-center = false
+bottom = true
+;override-redirect = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3	
+line-color = #f00
+
+padding-left = 0
+padding-right = 0
+
+border-top-size = 4
+border-top-color = ${colors.background}
+
+module-margin-left = 1
+module-margin-right = 1
+
+;general font
+font-0 = EnvyCodeR:size=10;1
+
+;dots in bar and ramp
+font-1 = Inconsolata:size=11;1
+
+;for volume symbol
+font-2 = Noto Sans Symbols2:size=13;4
+
+;for network symbol
+font-3 = FontAwesome5Free:style=Solid:pixelsize=10;2
+
+;calender symbol
+font-4 = FontAwesome5Free:pixelsize=10;2
+
+;focused and important font
+font-5 = EnvyCodeR:size=10:bold;1
+
+modules-left = i3
+modules-center = 
+modules-right = xkeyboard cpu xbacklight volume wlan eth battery time
+
+tray-position = right
+tray-padding = 1
+tray-detached = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;wm-restack = i3
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+format = <label-indicator>
+label-indicator-font = 6
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-foreground = ${colors.foreground-focused}
+label-indicator-background = ${colors.primary}
+label-indicator-underline = ${colors.background}			
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode = %mode%
+label-mode-font = 6
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground-focused}
+label-mode-background = ${colors.primary}
+label-mode-underline = ${colors.background}
+
+label-focused = %index%
+label-focused-font = 6
+label-focused-foreground = ${colors.foreground-focused}
+label-focused-background = ${colors.primary}
+label-focused-underline = ${colors.background}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-font = 1
+label-unfocused-foreground =${colors.foreground-unfocused}
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-font = 1
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-font = 6
+label-urgent-padding = 2
+
+[module/xbacklight]
+type = custom/script
+exec = $HOME/.config/polybar/backlight.sh
+format = <label>
+label = %{T4}%{T-} %{T2}%output%%{T-}
+label-foreground = ${colors.indicator}
+interval = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+
+format= <ramp-load>
+ramp-load-0 = %{T4}%{T-} %{T2}●○○○○○%{T-}
+ramp-load-1 = %{T4}%{T-} %{T2}●●○○○○%{T-}
+ramp-load-2 = %{T4}%{T-} %{T2}●●●○○○%{T-}
+ramp-load-3 = %{T4}%{T-} %{T2}●●●●●●%{T-}
+ramp-load-4 = %{T4}%{T-} %{T2}●●●●●○%{T-}
+ramp-load-5 = %{T4}%{T-} %{T2}●●●●●●%{T-}
+ramp-load-foreground = ${colors.indicator}
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+format = <ramp-used>
+ramp-used-0 = %{T4}%{T-} %{T2}●○○○○○%{T-}
+ramp-used-1 = %{T4}%{T-} %{T2}●●○○○○%{T-}
+ramp-used-2 = %{T4}%{T-} %{T2}●●●○○○%{T-}
+ramp-used-3 = %{T4}%{T-} %{T2}●●●●○○%{T-}
+ramp-used-4 = %{T4}%{T-} %{T2}●●●●●○%{T-}
+ramp-used-5 = %{T4}%{T-} %{T2}●●●●●●%{T-}
+ramp-used-foreground = ${colors.indicator}
+
+[module/wlan]
+type = internal/network
+interface = wlp18s0b1
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected-font = 1
+label-connected = "%{B#99aabb}%{F#ff000000}%{T6}%{u#ff000000 +u} %essid% %{-u}%{T-}%{F-}%{B-} %{F#ff5555}↑%{F-} %upspeed% %{F#ff5555}↓%{F-} %downspeed%"
+
+format-disconnected = <label-disconnected>
+label-disconnected-font = 1
+label-disconnected= %{F#ff5555}%{T4}%{T-} Lonely? Here's internet%{F-}
+
+ramp-signal-0 = %{T4}%{T-} %{T2}●○○○○○%{T-}
+ramp-signal-1 = %{T4}%{T-} %{T2}●●○○○○%{T-}
+ramp-signal-2 = %{T4}%{T-} %{T2}●●●○○○%{T-}
+ramp-signal-3 = %{T4}%{T-} %{T2}●●●●○○%{T-}
+ramp-signal-4 = %{T4}%{T-} %{T2}●●●●●○%{T-}
+ramp-signal-5 = %{T4}%{T-} %{T2}●●●●●●%{T-}
+ramp-signal-foreground = ${colors.indicator}
+
+[module/time]
+type = internal/date
+interval = 5
+
+time = "%{F#55aa55}%{T5}%{T-}%{F-} %b-%d %{F#55aa55}%{T4}%{T-}%{F-} %H:%M "
+
+label = %time%
+label-font = 1
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume>
+
+ramp-volume-font = 3
+ramp-volume-0 = 🔈%{T2}○○○○○○%{T-}
+ramp-volume-1 = 🔈%{T2}●○○○○○%{T-}
+ramp-volume-2 = 🔈%{T2}●●○○○○%{T-}
+ramp-volume-3 = 🔈%{T2}●●●○○○%{T-}
+ramp-volume-4 = 🔈%{T2}●●●●○○%{T-}
+ramp-volume-5 = 🔈%{T2}●●●●●○%{T-}
+ramp-volume-6 = 🔈%{T2}●●●●●●%{T-}
+ramp-volume-foreground = ${colors.indicator}
+
+format-muted = <label-muted><bar-volume>
+label-muted = 🔇
+label-muted-font = 3
+label-muted-foreground = ${colors.alert}
+
+bar-volume-format = %fill%%empty%
+bar-volume-width = 6
+bar-volume-gradient = false
+bar-volume-fill = ●
+bar-volume-fill-font = 2
+bar-volume-foreground-0 = ${colors.alert}
+bar-volume-empty = ○
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.alert}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
