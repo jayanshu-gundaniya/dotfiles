@@ -12,4 +12,6 @@ Plugin is infinity. The blurred wallpaper is [Unixporn post of the month for Jun
 ![vim](https://raw.githubusercontent.com/GLaDOS95/dotfiles/master/vim.jpg) <br />
 As I don't write code, there is no need for a well-set vim. <br /> <br />
 ![music](https://raw.githubusercontent.com/GLaDOS95/dotfiles/master/music.jpg) <br />
-[pipes.sh](https://github.com/pipeseroni/pipes.sh), cmus, vis <br />
+[pipes.sh](https://github.com/pipeseroni/pipes.sh), cmus, vis <br /> <br />
+![locked](https://raw.githubusercontent.com/GLaDOS95/dotfiles/master/locked.png) <br />
+changed i3lock-fancy <br /> 
