@@ -2,7 +2,7 @@
 backup of my dotfiles and other stuff <br /> <br />
 Colorscheme is stolen from [addy-dclxvi](https://github.com/addy-dclxvi) (and have swapped with some colors of my own). <br />
 Bash prompt and some minor system tweaks are from arch wiki. <br />
-[i3lock-fancy](https://github.com/meskarune/i3lock-fancy) ([Github Pages link](http://meskarune.github.io/i3lock-fancy/)) is a script which blurs background and adds lock and text to it. I am using the one [here bu Ema0](https://github.com/Ema0/i3lock-fancy). Have modified the colors a bit and added a clock instead of the text. <br />
+[i3lock-fancy](https://github.com/meskarune/i3lock-fancy) ([Github Pages link](http://meskarune.github.io/i3lock-fancy/)) is a script which blurs background and adds lock and text to it. I'm using the one [here by Ema0](https://github.com/Ema0/i3lock-fancy) (different way to blurr). Have modified the colors a bit and added a clock instead of the text. <br />
 
 ## screenshots
 ![empty](https://raw.githubusercontent.com/GLaDOS95/dotfiles/master/empty.jpg) <br />
